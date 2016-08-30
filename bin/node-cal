@@ -39,14 +39,14 @@ if(currMonth == 1)
     currMonth = 14;
     currYear--;
   }
+
   let q = currDay;
   let m = currMonth;
   let k = currYear % 100;
   let j = currYear / 100;
-  let h = q + 13*(m+1)/5 + k + k/4 + j/4 + 5*j;
+  let h = q + 13*(m+1)/5 + k + k/4 - k/100 + k/400;
   h = h % 7;
 
-console.log('h', h)
 
   switch(Math.floor(h)) {
    case 0 : console.log("Saturday.\n"); break;
