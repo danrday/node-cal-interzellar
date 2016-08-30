@@ -3,3 +3,57 @@
 'use strict'
 
 require('../lib/cli')
+
+
+let currentDate = new Date().toString()
+
+console.log(currentDate)
+
+let arrayDate = currentDate.split(' ')
+
+let currentDay = arrayDate[0]
+
+let currDay = parseInt(arrayDate[2])
+
+let currYear = parseInt(arrayDate[3])
+
+let month = new Date()
+
+let currMonth = month.getMonth()
+currMonth += 1
+
+
+console.log("month", currMonth)
+console.log("Day", currentDay)
+console.log("day", currDay)
+console.log("year", currYear)
+// console.log("",)
+
+if(currMonth == 1)
+  {
+    currMonth = 13;
+    currYear--;
+  }
+  if (currMonth == 2)
+  {
+    currMonth = 14;
+    currYear--;
+  }
+  let q = currDay;
+  let m = currMonth;
+  let k = currYear % 100;
+  let j = currYear / 100;
+  let h = q + 13*(m+1)/5 + k + k/4 + j/4 + 5*j;
+  h = h % 7;
+
+console.log('h', h)
+
+  switch(Math.floor(h)) {
+   case 0 : console.log("Saturday.\n"); break;
+   case 1 : console.log("Sunday.\n"); break;
+   case 2 : console.log("Monday. \n"); break;
+   case 3 : console.log("Tuesday. \n"); break;
+   case 4 : console.log("Wednesday. \n"); break;
+   case 5 : console.log("Thurday. \n"); break;
+   case 6 : console.log("Friday. \n"); break;
+  }
