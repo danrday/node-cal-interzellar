@@ -1,15 +1,18 @@
-//clean up
-
 "use strict";
 
-const { assert: { isFunction } } = require('chai')
+const { assert: { isFunction, strictEqual } } = require('chai')
 
-const { modYear, printDayOfWeek } = require('../lib/zeller')
+const { modifiedMonth, modifiedYear, getDay } = require('../lib/zeller')
 
 describe('zellers', () => {
   describe('getDay', () => {
     it('should be a function', () => {
       isFunction(getDay)
+    })
+    it('should accept one argument', () => {
+      const args = { month: 1, year: 2016 }
+      const expected = { getDay: 5 }
+      deepEqual(getDay(args), expected)
     })
     it('should return a sunday indexed day of the week', () => {
       strictEqual(getDay(2016, 8, 1), 1)

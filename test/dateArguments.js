@@ -1,27 +1,41 @@
 "use strict";
 
-const { assert: { isFunction } } = require('chai')
+const { assert: { isFunction, deepEqual, oneOf } } = require('chai')
 
 const { returnDateArguments, allYears, allMonths } = require('../lib/dateArguments')
 
+
 describe('dateArguments', () => {
+  describe('getCurrentDate', () => {
+    it('should be a function', () => {
+      isFunction(getCurrentDate())
+    })
+    it('should return the current month and year', () => {
+      const expected = { month: 9, year: 2016 }
+      deepEqual(getCurrentDate(), expected)
+    })
+  })
   describe('returnDateArguments', () => {
     it('should be a function', () => {
-      isFunction(returnDateArguments)
+      isFunction(returnDateArguments())
+    })
+    it ('should return an object', () => {
+      let x = returnDateArguments()
+      isObj(x)
     })
     it ('should handle no arguments', () => {
       const args = []
       const expected = { month: 9, year: 2016 }
       deepEqual(returnDateArguments(args), expected)
     })
-    it ('single arg should be int between 1 and 9999', () => {
+    it ('single arg should be int between 1753 and 9999', () => {
       const args = 2016
       const expected = allYears
       oneOf(returnDateArguments(args).year, expected)
     })
     it ('throws error if single arg is not in range', () => {
       const arg = 0
-      const expected = 'cal: year 0 not in range 1..9999'
+      const expected = 'cal: year 0 not in range 1753..9999'
       deepEqual(returnDateArguments(arg), expected)
     })
     it ('throws error if single arg is NaN', () => {
@@ -31,7 +45,7 @@ describe('dateArguments', () => {
     })
     it ('should handle 2 arguments', () => {
       const args = [january, 2016]
-      const expected = { month: 13, year: 2016 }
+      const expected = { month: 1, year: 2016 }
       deepEqual(returnDateArguments(args), expected)
     })
     it ('when 2 arguments, first 3 letters of first arg should match first 3 letters of a month', () => {
@@ -49,14 +63,14 @@ describe('dateArguments', () => {
       const expected = 'cal: 13 is neither a month number (1..12) nor a name'
       deepEqual(returnDateArguments(args), expected)
     })
-    it ('second argument should be integer between 1 and 9999', () => {
+    it ('second argument should be integer between 1753 and 9999', () => {
       const args = [january, 2016]
       const expected = allYears
       oneOf(returnDateArguments(args).year, expected)
     })
     it ('throws error if second arg is not in range', () => {
       const args = [january, 0]
-      const expected = 'cal: year 0 not in range 1..9999'
+      const expected = 'cal: year 0 not in range 1753..9999'
       deepEqual(returnDateArguments(arg).year, expected)
     })
   })
