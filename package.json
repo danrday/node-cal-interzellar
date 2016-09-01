@@ -1,0 +1,31 @@
+{
+  "name": "node-cal-interzellar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/node-cal",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R nyan",
+    "coverage": "istanbul cover _mocha -- -R nyan"
+  },
+  "bin": {
+    "node-cal": "bin/node-cal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-day-cohort-14/node-cal-interzellar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-14/node-cal-interzellar/issues"
+  },
+  "homepage": "https://github.com/nss-day-cohort-14/node-cal-interzellar#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2"
+  }
+}
