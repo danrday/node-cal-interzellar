@@ -1,0 +1,49 @@
+
+each day has border right 1 space
+
+(each line 21 lines long) + border right
+
+each line has border right 1 space
+
+Su Mo Tu We Th Fr Sa
+
+if (day < 10 ) {
+  printedDay = " " + day
+}
+
+
+FUNCTIONALITY
+
+// 'dateArguments' takes arguments from command line, (dateArguments) args: arg[0], arg[1]
+function dateArguments(arg[0], arg[1])  returns month and year as a number
+
+let dateArgs = dateArguments()
+
+function getCurrentDate() return month and year
+
+
+// and how many days are in that month (daysInMonth) args: month, year
+function returnDaysInMonth(month, year)  return # of days in month
+
+// returns day of week (zeller) args: month, year
+function zellerDay(month, year) return the day of the week of the first day of the month
+
+
+// prints a calendar for that month (printer) args:
+
+require dateArguments(month year)
+require zeller ( day of week )
+require daysInMonth ( days )
+
+let passedArg = { zeller.days, daysInMonth.days, dateArguments.monthAndYear }
+
+function printMonth( { day of week, month(number), year, days in month } )  return print to terminal
+
+  within printMonth...
+
+    printYearAndMonth()  args: month, year (print first line)
+
+    printDaysOfWeek()  (print days of week)
+      let daysOfWeek = [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+
+      truncateDays(daysOfWeek) { return array of truncated days}
