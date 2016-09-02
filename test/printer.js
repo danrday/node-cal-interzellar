@@ -2,7 +2,7 @@
 
 const { assert: { isFunction, deepEqual, strictEqual } } = require('chai')
 const { exec } = require('child_process')
-// const { getMonthInfo, 
+// const { getMonthInfo,
 //         printMonthCal,
 //         centerHeading,
 //         printYearAndMonth,
@@ -10,9 +10,10 @@ const { exec } = require('child_process')
 //       } = require('../lib/printer')
 
 
+
 describe('printer', () => {
 
-  describe('centerHeading', () => {  
+  describe('centerHeading', () => {
     it('should be a function', () => {
         isFunction(centerHeading)
     })
@@ -28,7 +29,7 @@ describe('printer', () => {
     })
   })
 
-  describe('printYearAndMonth', () => {  
+  describe('printYearAndMonth', () => {
     it('should be a function', () => {
         isFunction(printYearAndMonth)
     })
@@ -45,7 +46,7 @@ describe('printer', () => {
     })
   })
 
-  describe('determineWidth', () => {  
+  describe('determineWidth', () => {
     it('should be a function', () => {
         isFunction(determineWidth)
     })
@@ -59,8 +60,8 @@ describe('printer', () => {
       strictEqual(determineWidth(daysInMonth), expected)
     })
   })
-  
-  describe('printMonthCal', () => {  
+
+  describe('printMonthCal', () => {
     it('should be a function', () => {
         isFunction(printMonthCal)
     })
@@ -84,7 +85,7 @@ describe('printer', () => {
         assert.strictEqual(printMonthCal(9, 2016), calStdout)
         cb()
       })
-    })  
+    })
     it('should return the same output as cal for Feb 2016', (cb) => {
       exec('cal 2 2016', (calErr, calStdout) => {
         if (calErr) console.log(calErr);
@@ -135,7 +136,7 @@ describe('printer', () => {
       })
     })
   })
-  
+
   describe('getMonthInfo', () => {
     it('should be a function', () => {
       isFunction(getMonthInfo)

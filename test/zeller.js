@@ -2,7 +2,7 @@
 
 const { assert: { isFunction, strictEqual } } = require('chai')
 
-const { modifiedMonth, modifiedYear, getDay } = require('../lib/zeller')
+// const { modifiedMonth, modifiedYear, getDay } = require('../lib/zeller')
 
 describe('zellers', () => {
   describe('getDay', () => {
