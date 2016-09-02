@@ -147,52 +147,52 @@ describe('printer', () => {
     })
     it('should take one argument', () => {
       const arg = { month: 1, year: 2016 }
-      const expected = { days: 31, blankEndDays: 5, dayStartIndex: 5, month: 1, monthString: 'January', year: 2016}
+      const expected = { days: 31, blankEndDays: 6, dayStartIndex: 5, month: 1, monthString: '    January 2016', year: 2016}
       deepEqual(getMonthInfo(arg), expected)
     })
     it('should equal expected', () => {
       const arg = { month: 6, year: 2016 }
-      const expected = { days: 30, blankEndDays: 2, dayStartIndex: 3, month: 6, monthString: 'June', year: 2016}
+      const expected = { days: 30, blankEndDays: 2, dayStartIndex: 3, month: 6, monthString: '     June 2016', year: 2016}
       deepEqual(getMonthInfo(arg), expected)
     })
     it('should equal expected', () => {
       const arg = { month: 9, year: 2016 }
-      const expected = { days: 30, blankEndDays: 1, dayStartIndex: 4, month: 9, monthString: 'September', year: 2016}
+      const expected = { days: 30, blankEndDays: 1, dayStartIndex: 4, month: 9, monthString: '   September 2016', year: 2016}
       deepEqual(getMonthInfo(arg), expected)
     })
     it('should equal expected', () => {
       const arg = { month: 2, year: 2016 }
-      const expected = { days: 29, blankEndDays: 5, dayStartIndex: 1, month: 2, monthString: 'February', year: 2016}
+      const expected = { days: 29, blankEndDays: 5, dayStartIndex: 1, month: 2, monthString: '   February 2016', year: 2016}
       deepEqual(getMonthInfo(arg), expected)
     })
     it('should equal expected', () => {
       const arg = { month: 2, year: 2014 }
-      const expected = { days: 28, blankEndDays: 1, dayStartIndex: 6, month: 2, monthString: 'February', year: 2014}
+      const expected = { days: 28, blankEndDays: 1, dayStartIndex: 6, month: 2, monthString: '   February 2014', year: 2014}
       deepEqual(getMonthInfo(arg), expected)
     })
     it('should equal expected', () => {
       const arg = { month: 2, year: 2015 }
-      const expected = { days: 28, blankEndDays: 0, dayStartIndex: 0, month: 2, monthString: 'February', year: 2015}
+      const expected = { days: 28, blankEndDays: 7, dayStartIndex: 0, month: 2, monthString: '   February 2015', year: 2015}
       deepEqual(getMonthInfo(arg), expected)
     })
     it('should equal expected', () => {
       const arg = { month: 1, year: 2016 }
-      const expected = { days: 31, blankEndDays: 6, dayStartIndex: 5, month: 1, monthString: 'January', year: 2016}
+      const expected = { days: 31, blankEndDays: 6, dayStartIndex: 5, month: 1, monthString: '    January 2016', year: 2016}
       deepEqual(getMonthInfo(arg), expected)
     })
     it('should equal expected', () => {
       const arg = { month: 11, year: 2014 }
-      const expected = { days: 30, blankEndDays: 6, dayStartIndex: 6, month: 11, monthString: 'November', year: 2014}
+      const expected = { days: 30, blankEndDays: 6, dayStartIndex: 6, month: 11, monthString: '   November 2014', year: 2014}
       deepEqual(getMonthInfo(arg), expected)
     })
     it('should handle non-leap century', () => {
       const arg = { month: 2, year: 1900 }
-      const expected = { days: 28, blankEndDays: 3, dayStartIndex: 4, month: 2, monthString: 'February', year: 1900}
+      const expected = { days: 28, blankEndDays: 3, dayStartIndex: 4, month: 2, monthString: '   February 1900', year: 1900}
       deepEqual(getMonthInfo(arg), expected)
     })
     it('should handle leap century', () => {
       const arg = { month: 2, year: 2000 }
-      const expected = { days: 29, blankEndDays: 4, dayStartIndex: 2, month: 2, monthString: 'February', year: 2000}
+      const expected = { days: 29, blankEndDays: 4, dayStartIndex: 2, month: 2, monthString: '   February 2000', year: 2000}
       deepEqual(getMonthInfo(arg), expected)
     })
   })
