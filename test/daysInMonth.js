@@ -30,8 +30,8 @@ describe('daysInMonth', () => {
       deepEqual(isLeapYear(arg), expected)
     })
     it('should find a leap century', () => {
-      const arg = 1800
-      const expected = false
+      const arg = 1600
+      const expected = true
       deepEqual(isLeapYear(arg), expected)
     })
     it('should find a non leap century', () => {
