@@ -25,7 +25,11 @@
   "homepage": "https://github.com/nss-day-cohort-14/node-cal-interzellar#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "child_process": "^1.0.2",
     "istanbul": "^0.4.5",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
     "mocha": "^3.0.2"
   }
 }
